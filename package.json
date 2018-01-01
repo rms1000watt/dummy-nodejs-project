@@ -1,0 +1,11 @@
+{
+  "name": "dummy-nodejs-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"dummy nodejs test succeeded\""
+  },
+  "author": "",
+  "license": "MIT"
+}
