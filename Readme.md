@@ -11,6 +11,8 @@ This is a dummy nodejs project used as reference for other projects such as: [ht
 ## Usage
 
 ```bash
-npm install
-
+./build.sh
+docker run -itd --rm --name dummy-nodejs-project -p 3000:3000 rms1000watt/dummy-nodejs-project:latest
+open http://localhost:3000
+docker stop dummy-nodejs-project
 ```
