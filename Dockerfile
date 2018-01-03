@@ -1,5 +1,4 @@
-ARG NODE_DOCKER_VERSION=9.3.0-alpine
-# ARG NPM_VERSION=1.9.2-alpine3.7
+ARG NODE_DOCKER_VERSION
 
 FROM node:${NODE_DOCKER_VERSION} as builder
 WORKDIR /go/src/github.com/rms1000watt/dummy-nodejs-project
