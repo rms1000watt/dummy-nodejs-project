@@ -4,11 +4,13 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "pkg": "node_modules/.bin/pkg -t node9-macos-x64,node9-linux-x64 main.js",
     "test": "echo \"dummy nodejs test succeeded\""
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "4.16.2"
+    "express": "4.16.2",
+    "pkg": "4.3.0"
   }
 }

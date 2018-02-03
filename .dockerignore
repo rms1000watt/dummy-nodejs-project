@@ -1,1 +1,8 @@
 node_modules
+.dockerignore
+.gitignore
+build.sh
+Dockerfile
+main-linux
+main-macos
+Readme.md

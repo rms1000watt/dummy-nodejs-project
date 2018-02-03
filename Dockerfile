@@ -1,12 +1,15 @@
 ARG NODE_DOCKER_VERSION
 
 FROM node:${NODE_DOCKER_VERSION} as builder
-WORKDIR /go/src/github.com/rms1000watt/dummy-nodejs-project
+WORKDIR /dummy-nodejs-project
 COPY . .
-RUN npm install
-RUN npm test
+RUN npm install && \
+    npm test && \
+    npm run pkg
 
-FROM node:${NODE_DOCKER_VERSION}
-COPY --from=builder /go/src/github.com/rms1000watt/dummy-nodejs-project/main.js /main.js
-COPY --from=builder /go/src/github.com/rms1000watt/dummy-nodejs-project/node_modules /node_modules
-ENTRYPOINT ["node", "main.js"]
+FROM scratch
+COPY --from=builder /dummy-nodejs-project/main-linux /main-linux
+COPY --from=builder /usr/lib/ /usr/lib
+COPY --from=builder /lib/ /lib
+COPY --from=builder /lib64/ /lib64
+ENTRYPOINT ["./main-linux"]
