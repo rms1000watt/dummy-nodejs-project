@@ -8,7 +8,7 @@ RUN npm install && \
     npm run pkg
 
 FROM scratch
-COPY --from=builder /dummy-nodejs-project/main-linux /main-linux
+COPY --from=builder /dummy-nodejs-project/main-linux         /main-linux
 COPY --from=builder /lib/x86_64-linux-gnu/libdl.so.2         /lib/x86_64-linux-gnu/libdl.so.2
 COPY --from=builder /lib/x86_64-linux-gnu/librt.so.1         /lib/x86_64-linux-gnu/librt.so.1
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /usr/lib/x86_64-linux-gnu/libstdc++.so.6
